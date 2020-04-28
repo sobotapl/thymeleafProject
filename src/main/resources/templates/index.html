@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Add book</title>
+</head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+
+Witaj
+<p th:text="${name}"></p>
+
+<h1 th:test="#{hello.message}"></h1>
+
+<a href="book/add.html" th:href="@{/book/add}">Add book</a>
+
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

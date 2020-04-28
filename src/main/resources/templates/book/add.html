@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Add book</title>
+</head>
+<center>
+<body>
+<div th:replace="fragments/header :: header"></div>
+
+
+Add book:
+
+<form th:action="@{/book/add}" method="post" th:object="${book}" >
+    Author: <input type="text" th:field="*{author}" />
+    Title: <input type="text" th:field="*{title}" />
+    Price: <input type="text" th:field="*{price}" />
+    <input type="submit" value="Add" />
+</form>
+
+
+<ul >
+    <li th:each="b: ${books}" th:text="|${b.author} = ${b.title} (${b.price})|">Book 1</li>
+</ul>
+
+
+<a href="book/showall.html" th:href="@{/book/showall}"><input type="submit" value="show all books"/></a>
+
+
+
+
+
+
+<!--
+    without th:object
+    <form th:action="@{/book/add}" method="post" >
+    Author: <input type="text" th:field="${book.author}" />
+    Title: <input type="text" th:field="${book.title}" />
+    Price: <input type="text" th:field="${book.price}" />
+    <input type="submit" value="Add" />
+</form>-->
+
+<div th:replace="fragments/footer :: footer"></div>
+
+</body>
+</center>
+</html>
