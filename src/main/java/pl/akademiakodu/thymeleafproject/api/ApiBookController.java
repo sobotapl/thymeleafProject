@@ -33,7 +33,7 @@ public class ApiBookController {
         return books;
     }
 
-    @GetMapping(value = "/api/books/{id}" )
+    @GetMapping(value = "/api/books/{id}")
     @ResponseBody //Jackson librar
     public Book getAllBooks(@PathVariable Long id) {
         Book book = bookService.fineOne(id);
@@ -47,7 +47,7 @@ public class ApiBookController {
         bookService.save(book);
     }
 
-    @DeleteMapping(value = "/api/books/{id}" )
+    @DeleteMapping(value = "/api/books/{id}")
     public void deleteBook(@PathVariable Long id) {
         bookService.delete(id);
     }
